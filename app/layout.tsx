@@ -1,8 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+import React from 'react';
+
+import type { Metadata } from 'next';
+
+import { Atkinson_Hyperlegible } from '@next/font/google';
+
+import { GameProvider } from '../components/game-provider';
+
+const hyperlegible = Atkinson_Hyperlegible({
+  subsets: ['latin'],
+  weight: ['400','700']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <GameProvider>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={hyperlegible.className}>{children}</body>
     </html>
+    </GameProvider>
   );
 }

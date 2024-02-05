@@ -31,3 +31,31 @@ body {
     text-wrap: balance;
   }
 }
+
+.modal-enter {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.modal-enter-active {
+  opacity: 1;
+}
+
+.modal-content {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.modal-content-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.current-player {
+  position: relative; 
+  background-color: #FDA214; 
+  color: white;
+}
+
+
